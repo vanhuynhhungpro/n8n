@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Finance Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-100 p-4">
+  <div class="max-w-3xl mx-auto bg-white p-6 rounded shadow">
+    <h1 class="text-2xl font-bold mb-4 text-center">Finance Dashboard</h1>
+    <div class="grid grid-cols-3 gap-4 mb-6" id="summary">
+      <div class="p-4 bg-green-100 rounded text-center">
+        <p class="text-sm">Income</p>
+        <p id="income" class="text-xl font-semibold">$0</p>
+      </div>
+      <div class="p-4 bg-red-100 rounded text-center">
+        <p class="text-sm">Expenses</p>
+        <p id="expenses" class="text-xl font-semibold">$0</p>
+      </div>
+      <div class="p-4 bg-blue-100 rounded text-center">
+        <p class="text-sm">Balance</p>
+        <p id="balance" class="text-xl font-semibold">$0</p>
+      </div>
+    </div>
+
+    <form id="transaction-form" class="mb-6 grid grid-cols-4 gap-4">
+      <input type="date" id="date" required class="border p-2 rounded col-span-1" />
+      <input type="number" id="amount" placeholder="Amount" required class="border p-2 rounded col-span-1" />
+      <select id="type" class="border p-2 rounded col-span-1">
+        <option value="income">Income</option>
+        <option value="expense">Expense</option>
+      </select>
+      <input type="text" id="description" placeholder="Description" class="border p-2 rounded col-span-1" />
+      <button type="submit" class="col-span-4 bg-blue-500 text-white p-2 rounded">Add Transaction</button>
+    </form>
+
+    <canvas id="chart" height="100"></canvas>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
